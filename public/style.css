@@ -47,10 +47,6 @@ body {
     animation: fadeIn 0.5s ease forwards;
 }
 
-.slide.fade-out {
-    animation: fadeOut 0.5s ease forwards;
-}
-
 /* =========================
    SCENE
 ========================= */
@@ -70,56 +66,116 @@ body {
 }
 
 /* =========================
-   CONTENT CARD
+   🔴 GLOBAL MOMO STYLE (CÁCH 1)
 ========================= */
+
+/* MẶC ĐỊNH: mọi scene-content là MoMo box */
 .scene-content {
     position: relative;
     z-index: 10;
     text-align: center;
-    max-width: 520px;
+
+    background: #fff1f4;
+    border: 4px solid #e58ca3;
+    border-radius: 32px;
+
+    max-width: 1200px;
+    padding: 64px 72px;
+    margin: auto;
+
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.45);
+    color: #6b1f2a;
+
     animation: slideUp 0.6s ease;
 }
 
-/* =========================
-   TYPOGRAPHY DEFAULT
-========================= */
-h1 {
-    font-size: 42px;
-    margin-bottom: 16px;
+/* TEXT SCALE THEO KHUNG */
+.scene-content h1 {
+    font-size: 64px;
+    margin-bottom: 24px;
+    color: #8b1e1e;
 }
 
-p {
-    font-size: 18px;
-    opacity: 0.9;
+.scene-content p {
+    font-size: 26px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    color: #6b3a3a;
 }
 
 /* =========================
-   DEFAULT BUTTON (GIỮ NGUYÊN)
+   GLOBAL MOMO BUTTON
 ========================= */
-button {
-    width: 320px;
-    padding: 16px;
-    margin: 8px 0;
-    border-radius: 16px;
+.scene-content button {
+    width: 100%;
+    padding: 28px 24px;
+    margin: 14px 0;
+
+    font-size: 26px;
+    font-weight: 700;
+
+    border-radius: 22px;
     border: none;
     cursor: pointer;
-    font-size: 16px;
-    background: linear-gradient(135deg, #ff6b6b, #ff8787);
+    transition: all 0.25s ease;
+}
+
+/* Button chính */
+/* =========================
+   MOMO OPTION HIERARCHY
+========================= */
+
+/* OPTION CHÍNH – ĐẬM */
+.scene-content button.primary {
+    background: linear-gradient(135deg, #ff5f86, #ff8fb0);
     color: #fff;
-    transition: 0.25s;
+    box-shadow: 0 10px 0 #d84a73;
 }
 
-button:hover {
-    transform: translateY(-2px);
+/* OPTION PHỤ – NHẠT */
+.scene-content button.secondary {
+    background: linear-gradient(135deg, #ffd1dc, #ffe9ef);
+    color: #7a2f3a;
+    box-shadow: 0 8px 0 #e8b5c1;
 }
 
-button:active {
-    transform: scale(0.96);
-}
-
-button.ghost {
+/* OPTION BỎ QUA – RẤT NHẠT */
+.scene-content button.ghost {
     background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.35);
+    border: 2px dashed #c28a8a;
+    color: #8b4a4a;
+}
+
+.scene-content button:not(.ghost):hover {
+    transform: translateY(-4px);
+}
+
+/* Button ghost */
+.scene-content button.ghost {
+    background: transparent;
+    border: 2px dashed #c28a8a;
+    color: #8b4a4a;
+}
+
+.scene-content button.ghost:hover {
+    background: rgba(194, 138, 138, 0.12);
+}
+
+/* =========================
+   ⛔ OPT-OUT MOMO (INTRO, DAY INTRO)
+========================= */
+.scene-content.plain {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    max-width: 700px;
+    color: #fff;
+}
+
+.scene-content.plain h1,
+.scene-content.plain p {
+    color: #fff;
 }
 
 /* =========================
@@ -137,97 +193,12 @@ button.ghost {
     background-image: url("https://images.unsplash.com/photo-1518609878373-06d740f60d8b");
 }
 
-/* =========================
-   🎴 TẾT MARKET – SCENE MUA SẮM
-========================= */
 .bg-tet-market1 {
     background-image: url("./assest/mau1.jpg");
 }
+
 .bg-suaxe {
     background-image: url("./assest/mau2.jpg");
-}
-.
-/* Card kiểu giấy / lì xì */
-.tet-market {
-    background: rgba(255, 245, 240, 0.9);
-    border-radius: 28px;
-    padding: 36px 32px;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
-    color: #5a2a2a;
-}
-
-/* Typography riêng */
-.tet-market h1 {
-    font-size: 40px;
-    color: #8b1e1e;
-    margin-bottom: 12px;
-}
-
-.tet-market p {
-    font-size: 18px;
-    margin-bottom: 28px;
-    color: #6b3a3a;
-}
-
-/* Group choice */
-.choice-group {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-}
-
-/* Base choice button */
-.choice {
-    width: 100%;
-    padding: 16px 20px;
-    border-radius: 18px;
-    border: none;
-    font-size: 17px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.25s ease;
-    line-height: 1.3;
-}
-
-.choice span {
-    font-size: 14px;
-    font-weight: 500;
-    opacity: 0.85;
-}
-
-/* Xả láng – đỏ Tết */
-.choice.rich {
-    background: #c92a2a;
-    color: #fff;
-    box-shadow: 0 8px 0 #9c1d1d;
-}
-
-.choice.rich:hover {
-    transform: translateY(-2px);
-    animation: shake 0.35s;
-}
-
-/* Mua cần thiết – vàng */
-.choice.normal {
-    background: #f4c430;
-    color: #5a2a00;
-    box-shadow: 0 8px 0 #d4a70f;
-}
-
-.choice.normal:hover {
-    transform: translateY(-2px);
-    animation: shake 0.35s;
-}
-
-/* Không mua – tinh tế */
-.choice.skip {
-    background: transparent;
-    color: #7a4a4a;
-    border: 1.5px dashed rgba(122, 74, 74, 0.5);
-}
-
-.choice.skip:hover {
-    background: rgba(122, 74, 74, 0.08);
 }
 
 /* =========================
@@ -240,16 +211,6 @@ button.ghost {
 
     to {
         opacity: 1
-    }
-}
-
-@keyframes fadeOut {
-    from {
-        opacity: 1
-    }
-
-    to {
-        opacity: 0
     }
 }
 
@@ -287,9 +248,6 @@ button.ghost {
     }
 }
 
-.shake {
-    animation: shake 0.4s;
-}
 /* =========================
    MONEY RAIN EFFECT
 ========================= */
@@ -312,107 +270,4 @@ button.ghost {
         transform: translateY(110vh) rotate(360deg);
         opacity: 0;
     }
-}
-
-
-/* =========================
-   MOMO-LIKE STYLE (BOX + OPTION)
-========================= */
-
-/* Box nền */
-/* =========================
-   MOMO STYLE – LARGE POPUP
-========================= */
-
-/* =========================
-   MOMO STYLE – LARGE POPUP
-========================= */
-
-.momo-style {
-    background: #fff1f4;
-    border: 4px solid #e58ca3;
-    border-radius: 32px;
-
-    /* 👉 BOX TO – CÂN ĐỐI */
-    max-width: 1200px;
-    padding: 64px 72px;
-
-    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.45);
-    color: #6b1f2a;
-
-    /* canh giữa đẹp hơn */
-    margin: auto;
-}
-
-/* =========================
-   TEXT SCALE THEO KHUNG
-========================= */
-
-.momo-style h1 {
-    font-size: 64px;
-    /* 👉 TO RÕ */
-    margin-bottom: 24px;
-    color: #8b1e1e;
-}
-
-.momo-style p {
-    font-size: 26px;
-    /* 👉 TO THEO */
-    line-height: 1.6;
-    margin-bottom: 40px;
-    color: #6b3a3a;
-}
-
-/* =========================
-   OPTION BUTTON – TO THEO BOX
-========================= */
-
-.momo-option {
-    width: 100%;
-    padding: 28px 24px;
-    /* 👉 NÚT CAO */
-    margin: 14px 0;
-
-    font-size: 26px;
-    /* 👉 CHỮ TO */
-    font-weight: 700;
-
-    border-radius: 22px;
-    border: none;
-    cursor: pointer;
-
-    transition: all 0.25s ease;
-}
-
-/* HỒNG ĐẬM – option chính */
-.momo-option.strong {
-    background: linear-gradient(135deg, #ff6f91, #ff9db5);
-    color: #fff;
-    box-shadow: 0 10px 0 #d85a78;
-}
-
-.momo-option.strong:hover {
-    transform: translateY(-4px);
-}
-
-/* HỒNG NHẠT */
-.momo-option.soft {
-    background: linear-gradient(135deg, #ffd1dc, #ffe9ef);
-    color: #7a2f3a;
-    box-shadow: 0 8px 0 #e8b5c1;
-}
-
-.momo-option.soft:hover {
-    transform: translateY(-4px);
-}
-
-/* OPTION BỎ QUA */
-.momo-option.ghost {
-    background: transparent;
-    border: 2px dashed #c28a8a;
-    color: #8b4a4a;
-}
-
-.momo-option.ghost:hover {
-    background: rgba(194, 138, 138, 0.12);
 }
