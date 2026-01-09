@@ -77,15 +77,27 @@
             </div>
         </section>
 
-        <section class="slide scene bg-day1" data-slide="6">
-            <div class="scene-content center">
-                <h1>Mua sắm Tết</h1>
-                <p>Sắm sửa cho bản thân cũng là một cách yêu mình.</p>
-                <button onclick="choose('xaLang',1000000)">🛍️ Xả láng (-1.000.000đ)</button>
-                <button onclick="choose('canThiet',500000)">🧺 Mua cần thiết (-500.000đ)</button>
-                <button class="ghost" onclick="choose('khongMua')">Không mua (0đ)</button>
-            </div>
-        </section>
+<section class="slide scene bg-tet-market" data-slide="6">
+    <div class="scene-content momo-style">
+        <h1>Mua sắm Tết</h1>
+        <p>Sắm sửa cho bản thân cũng là một cách yêu mình.</p>
+
+        <button class="momo-option strong" onclick="choose('xaLang',1000000)">
+            🛍️ Xả láng (-1.000.000đ)
+        </button>
+
+        <button class="momo-option soft" onclick="choose('canThiet',500000)">
+            🧺 Mua cần thiết (-500.000đ)
+        </button>
+
+        <button class="momo-option ghost" onclick="choose('khongMua')">
+            Không mua (0đ)
+        </button>
+    </div>
+</section>
+
+
+
 
         <section class="slide end-day bg-day1" data-slide="7">
             <div class="end-day-content">
@@ -115,14 +127,23 @@
             </div>
         </section>
 
-        <section class="slide scene bg-day2" data-slide="10">
-            <div class="scene-content center">
+        <section class="slide scene bg-tet-market" data-slide="10">
+            <div class="scene-content momo-style">
                 <h1>Mua quà Tết</h1>
-                <p>Về Tết không thể tay không.</p>
-                <button onclick="choose('quaXin',1000000)">🎁 Quà xịn (-1.000.000đ)</button>
-                <button onclick="choose('quaVua',500000)">🎁 Quà vừa (-500.000đ)</button>
-                <button class="ghost" onclick="choose('khongQua')">Không mua (0đ)</button>
+            
+                <button class="momo-option strong" onclick="choose('quaXin',1000000)">
+                    🎁 Quà xịn (-1.000.000đ)
+                </button>
+            
+                <button class="momo-option soft" onclick="choose('quaVua',500000)">
+                    🎁 Quà vừa (-500.000đ)
+                </button>
+            
+                <button class="momo-option ghost" onclick="choose('khongQua')">
+                    Không mua (0đ)
+                </button>
             </div>
+
         </section>
 
         <section class="slide end-day bg-day2" data-slide="11">

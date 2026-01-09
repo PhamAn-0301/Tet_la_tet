@@ -90,6 +90,9 @@ function spend(amount) {
 ========================= */
 function choose(action, cost = 0) {
   if (!spend(cost)) return;
+  if (cost > 0) {
+    moneyRain();
+  }
 
   switch (action) {
     /* ----- DAY 1 ----- */
@@ -204,4 +207,23 @@ function endGame() {
     message;
 
   goToSlide(17);
+}
+
+/* =========================
+   MONEY RAIN EFFECT
+========================= */
+function moneyRain(count = 18) {
+  for (let i = 0; i < count; i++) {
+    const money = document.createElement("div");
+    money.className = "money";
+    money.innerText = "💸";
+
+    money.style.left = Math.random() * window.innerWidth + "px";
+    money.style.animationDuration = 2 + Math.random() * 2 + "s";
+    money.style.fontSize = 18 + Math.random() * 16 + "px";
+
+    document.body.appendChild(money);
+
+    setTimeout(() => money.remove(), 4000);
+  }
 }
