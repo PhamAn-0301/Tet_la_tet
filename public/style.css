@@ -1,0 +1,176 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    height: 100%;
+    font-family: 'Inter', sans-serif;
+    background: #0f0f10;
+    color: #fff;
+    overflow: hidden;
+}
+
+/* HUD */
+#hud {
+    position: fixed;
+    top: 16px;
+    left: 16px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    padding: 12px 16px;
+    border-radius: 14px;
+    font-size: 14px;
+    z-index: 999;
+    line-height: 1.6;
+}
+
+/* SLIDE */
+.slide {
+    position: absolute;
+    inset: 0;
+    display: none;
+}
+
+.slide.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.slide.fade-out {
+    animation: fadeOut 0.5s ease forwards;
+}
+
+.scene::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+}
+
+.scene {
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.scene-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    max-width: 520px;
+    animation: slideUp 0.6s ease;
+}
+
+h1 {
+    font-size: 42px;
+    margin-bottom: 16px;
+}
+
+p {
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+/* BUTTON */
+button {
+    width: 320px;
+    padding: 16px;
+    margin: 8px 0;
+    border-radius: 16px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    background: linear-gradient(135deg, #ff6b6b, #ff8787);
+    color: #fff;
+    transition: 0.25s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: scale(0.96);
+}
+
+button.ghost {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+/* BACKGROUND */
+.bg-day1 {
+    background-image: url("https://images.unsplash.com/photo-1544025162-d76694265947");
+}
+
+.bg-day2 {
+    background-image: url("https://images.unsplash.com/photo-1519741497674-611481863552");
+}
+
+.bg-day3 {
+    background-image: url("https://images.unsplash.com/photo-1518609878373-06d740f60d8b");
+}
+
+/* EFFECT */
+@keyframes fadeIn {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1
+    }
+
+    to {
+        opacity: 0
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px)
+    }
+
+    to {
+        opacity: 1;
+        transform: none
+    }
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0)
+    }
+
+    25% {
+        transform: translateX(-6px)
+    }
+
+    50% {
+        transform: translateX(6px)
+    }
+
+    75% {
+        transform: translateX(-4px)
+    }
+
+    100% {
+        transform: translateX(0)
+    }
+}
+
+.shake {
+    animation: shake 0.4s
+}

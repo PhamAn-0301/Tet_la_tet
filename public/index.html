@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tết Spending Game</title>
+
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div id="game">
+
+        <!-- ================= INTRO ================= -->
+        <section class="slide active scene bg-day1" data-slide="0">
+            <div class="scene-content center">
+                <h1>3 ngày cận Tết</h1>
+                <p>Bạn có <b>5.000.000đ</b> và 3 ngày để chuẩn bị cho một mùa Tết trọn vẹn.</p>
+                <button onclick="goToSlide(1)">Bắt đầu</button>
+            </div>
+        </section>
+
+        <section class="slide scene bg-day1" data-slide="1">
+            <div class="scene-content center">
+                <p>
+                    Mục tiêu của bạn là đến cuối game còn ít nhất
+                    <b>1.250.000đ</b> để mua vé xe về quê
+                    và có thêm tiền lì xì Tết.
+                </p>
+                <button onclick="goToSlide(2)">Tiếp tục</button>
+            </div>
+        </section>
+
+        <section class="slide scene bg-day1" data-slide="2">
+            <div class="scene-content center">
+                <h1>Tạo quỹ “Tết sum vầy”?</h1>
+                <p>Chuẩn bị trước một khoản tiền giúp bạn tránh chi tiêu quá tay.</p>
+                <button onclick="createFund(1250000)">💰 Quỹ 1.250.000đ</button>
+                <button onclick="createFund(2000000)">💰 Quỹ 2.000.000đ</button>
+                <button class="ghost" onclick="playDayIntro(3,4)">Không tạo quỹ</button>
+            </div>
+        </section>
+
+        <!-- ================= DAY 1 ================= -->
+        <section class="slide day-intro bg-day1" data-slide="3">
+            <div class="day-intro-content">
+                <h1>Ngày 1 – 27 Tết</h1>
+                <p>
+                    Ngày đầu tiên cận Tết.
+                    Chuẩn bị sớm có thể giúp bạn tránh được những rắc rối về sau.
+                </p>
+                <button onclick="goToSlide(4)">Tiếp tục</button>
+            </div>
+        </section>
+
+        <section class="slide scene bg-day1" data-slide="4">
+            <div class="scene-content center">
+                <h1>Bảo dưỡng xe?</h1>
+                <p>Cận Tết mà xe hỏng giữa đường thì rất phiền.</p>
+                <button onclick="choose('baoDuong',500000)">🔧 Bảo dưỡng (-500.000đ)</button>
+                <button class="ghost" onclick="choose('khongBaoDuong')">Không bảo dưỡng (0đ)</button>
+            </div>
+        </section>
+
+        <section class="slide scene bg-day1" data-slide="5">
+            <div class="scene-content center">
+                <h1>Mua vali?</h1>
+                <p>Chiếc vali cũ có đủ mang quà về quê không nhỉ?</p>
+                <button onclick="choose('muaVali',400000)">🧳 Mua vali (-400.000đ)</button>
+                <button class="ghost" onclick="choose('khongVali')">Không mua (0đ)</button>
+            </div>
+        </section>
+
+        <section class="slide scene bg-day1" data-slide="6">
+            <div class="scene-content center">
+                <h1>Mua sắm Tết</h1>
+                <p>Sắm sửa cho bản thân cũng là một cách yêu mình.</p>
+                <button onclick="choose('xaLang',1000000)">🛍️ Xả láng (-1.000.000đ)</button>
+                <button onclick="choose('canThiet',500000)">🧺 Mua cần thiết (-500.000đ)</button>
+                <button class="ghost" onclick="choose('khongMua')">Không mua (0đ)</button>
+            </div>
+        </section>
+
+        <section class="slide end-day bg-day1" data-slide="7">
+            <div class="end-day-content">
+                <h1>Kết thúc ngày 1</h1>
+                <button onclick="showSummary(8)">Xem chi tiêu</button>
+                <button class="ghost" onclick="playDayIntro(8,9)">Sang ngày 2</button>
+            </div>
+        </section>
+
+        <!-- ================= DAY 2 ================= -->
+        <section class="slide day-intro bg-day2" data-slide="8">
+            <div class="day-intro-content">
+                <h1>Ngày 2 – 28 Tết</h1>
+                <p>
+                    Chỉ còn 2 ngày nữa là Tết.
+                    Các khoản chi bắt đầu nhiều hơn.
+                </p>
+                <button onclick="goToSlide(9)">Tiếp tục</button>
+            </div>
+        </section>
+
+        <section class="slide scene bg-day2" data-slide="9">
+            <div class="scene-content center">
+                <h1>Làm tóc?</h1>
+                <button onclick="choose('catToc',200000)">💇 Cắt tóc (-200.000đ)</button>
+                <button class="ghost" onclick="choose('khongCat')">Không cắt (0đ)</button>
+            </div>
+        </section>
+
+        <section class="slide scene bg-day2" data-slide="10">
+            <div class="scene-content center">
+                <h1>Mua quà Tết</h1>
+                <p>Về Tết không thể tay không.</p>
+                <button onclick="choose('quaXin',1000000)">🎁 Quà xịn (-1.000.000đ)</button>
+                <button onclick="choose('quaVua',500000)">🎁 Quà vừa (-500.000đ)</button>
+                <button class="ghost" onclick="choose('khongQua')">Không mua (0đ)</button>
+            </div>
+        </section>
+
+        <section class="slide end-day bg-day2" data-slide="11">
+            <div class="end-day-content">
+                <h1>Kết thúc ngày 2</h1>
+                <button onclick="showSummary(12)">Xem chi tiêu</button>
+                <button class="ghost" onclick="playDayIntro(12,12)">Sang ngày 3</button>
+            </div>
+        </section>
+
+        <!-- ================= DAY 3 ================= -->
+        <section class="slide day-intro bg-day3" data-slide="12">
+            <div class="day-intro-content">
+                <h1>Ngày 3 – 29 Tết</h1>
+                <p>
+                    Ngày cuối cùng trước Tết.
+                    Những quyết định hôm nay sẽ quyết định bạn có thể về quê hay không.
+                </p>
+                <button onclick="goToDay3()">Tiếp tục</button>
+            </div>
+        </section>
+
+        <!-- 🚨 UNEXPECTED: XE HƯ -->
+        <section class="slide scene bg-day3" data-slide="13">
+            <div class="scene-content center">
+                <h1>🚨 TÌNH HUỐNG BẤT NGỜ!</h1>
+                <p>
+                    Ôi không! Xe bạn hỏng giữa đường 😱<br>
+                    Chỉ còn <b>1 tiệm sửa xe</b> mở cửa, cận Tết nên giá gấp 3 ngày thường.
+                </p>
+                <p><b>Chi phí sửa xe: -600.000đ</b></p>
+                <button onclick="handleUnexpected1()">Sửa xe & tiếp tục</button>
+            </div>
+        </section>
+
+        <!-- YEP -->
+        <section class="slide scene bg-day3" data-slide="14">
+            <div class="scene-content center">
+                <h1>Tiệc tất niên công ty</h1>
+                <p>Một bữa tiệc cuối năm cũng đáng để tham gia.</p>
+                <button onclick="choose('yepXaLang',500000)">🍻 Xả láng (-500.000đ)</button>
+                <button onclick="choose('yepTietKiem',250000)">🍺 Vừa phải (-250.000đ)</button>
+                <button class="ghost" onclick="choose('khongYep')">Không đi (0đ)</button>
+            </div>
+        </section>
+
+        <!-- FLASH SALE -->
+        <section class="slide scene bg-day3" data-slide="15">
+            <div class="scene-content center">
+                <h1>Flash Sale</h1>
+                <p>Món đồ bạn thích đang được giảm giá.</p>
+                <button onclick="choose('flashBuy',850000)">🔥 Mua ngay (-850.000đ)</button>
+                <button class="ghost" onclick="handleUnexpected2()">Không mua (0đ)</button>
+            </div>
+        </section>
+
+        <!-- UNEXPECTED 2 -->
+        <section class="slide scene bg-day3" data-slide="16">
+            <div class="scene-content center">
+                <h1>💔 Không đủ vali</h1>
+                <p>Bạn không đủ vali để mang quà Tết về quê.</p>
+                <button onclick="endGame()">Tiếp tục</button>
+            </div>
+        </section>
+
+        <!-- RESULT -->
+        <section class="slide scene bg-day3" data-slide="17">
+            <div class="scene-content center">
+                <h1>Kết quả</h1>
+                <p id="finalText"></p>
+            </div>
+        </section>
+
+        <!-- GAME OVER -->
+        <section class="slide scene bg-day3" data-slide="18">
+            <div class="scene-content center">
+                <h1>Game Over</h1>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="./game.js"></script>
+</body>
+
+</html>
