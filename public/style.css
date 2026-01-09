@@ -200,7 +200,21 @@ body {
 .bg-suaxe {
     background-image: url("./assest/mau2.jpg");
 }
-
+.bg-sale {
+    background-image: url("./assest/sale.png");
+}
+.bg-tatnien {
+    background-image: url("./assest/tatnien.png");
+}
+.bg-xexe {
+    background-image: url("./assest/xexe.jpg");
+}
+.bg-check {
+    background-image: url("./assest/check.png");
+}
+.bg-toc {
+    background-image: url("./assest/toc.jpg");
+}
 /* =========================
    EFFECTS
 ========================= */
@@ -270,4 +284,51 @@ body {
         transform: translateY(110vh) rotate(360deg);
         opacity: 0;
     }
+}
+
+/* =========================
+   FINAL RESULT – MOMO STYLE
+========================= */
+
+/* SỐ DƯ CUỐI – RẤT TO */
+.final-balance {
+    font-size: 72px;
+    font-weight: 800;
+    color: #f5f5f5;
+    margin-bottom: 24px;
+}
+
+/* DÒNG CHỈ SỐ */
+.final-stats {
+    font-size: 24px;
+    margin-bottom: 28px;
+    color: #ffffff;
+}
+
+/* KHUNG KẾT LUẬN TÀI CHÍNH (MOMO) */
+.momo-conclusion {
+    background: linear-gradient(135deg, #ff6f91, #ff9db5);
+    color: #fff;
+    padding: 22px 36px;
+    border-radius: 22px;
+    font-size: 24px;
+    font-weight: 700;
+    box-shadow: 0 10px 0 #d85a78;
+    margin: 0 auto 26px;
+
+    /* 🔥 PHẦN QUAN TRỌNG */
+    width: fit-content;
+    /* box rộng theo chữ */
+    max-width: 95vw;
+    /* không vượt màn hình */
+    white-space: nowrap;
+    /* không rớt dòng */
+    text-align: center;
+}
+
+/* KẾT LUẬN HÀNH VI */
+.final-reflection {
+    font-size: 22px;
+    line-height: 1.6;
+    color: #ffffff;
 }

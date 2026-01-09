@@ -188,26 +188,60 @@ function handleUnexpected2() {
 ========================= */
 function endGame() {
   const total = state.cash + state.fund;
-  let message = "";
+  let financeMessage = "";
+  let reflection = "";
 
+  /* ====== KẾT LUẬN TÀI CHÍNH ====== */
   if (total > 1500000) {
-    message =
-      "Bạn đã đủ tiền mua vé xe về quê và còn dư tiền để lì xì Tết 🎉";
+    financeMessage =
+  "Bạn đã đủ tiền mua vé xe về quê và còn dư tiền để lì xì&nbsp;Tết&nbsp;🎉";
+
     state.bond += 1;
   } else if (total >= 1250000) {
-    message = "Bạn vừa đủ tiền mua vé xe về quê 👍";
+    financeMessage = "Bạn vừa đủ tiền mua vé xe về quê 👍";
   } else {
-    message = "Bạn không đủ tiền mua vé xe về quê 😢";
+    financeMessage = "Bạn không đủ tiền mua vé xe về quê 😢";
   }
 
-  document.getElementById("finalText").innerText =
-    `Sau 3 ngày cận Tết, bạn còn lại: ${total.toLocaleString()}đ\n\n` +
-    `Niềm vui Tết 🎊: ${state.joy}\n` +
-    `Gắn kết 🤝: ${state.bond}\n\n` +
-    message;
+  /* ====== KẾT LUẬN HÀNH VI ====== */
+  if (state.joy < 2) {
+    reflection +=
+      "• Bạn đã dành hơi ít thời gian cho bản thân, hãy yêu chiều bản thân một chút nhé 💖<br>";
+  }
+
+  if (state.bond < 2) {
+    reflection +=
+      "• Bạn đã dành hơi ít thời gian cho các mối quan hệ, đừng quên tận hưởng niềm vui từ sự đồng hành và gắn kết với những người xung quanh nhé 🤝<br>";
+  }
+
+  if (reflection === "") {
+    reflection =
+      "• Bạn đã cân bằng khá tốt giữa bản thân và các mối quan hệ trong dịp Tết này 🌸";
+  }
+
+  /* ====== RENDER HTML ====== */
+  document.getElementById("finalText").innerHTML = `
+    <div class="final-balance">
+      ${total.toLocaleString()}đ
+    </div>
+
+    <div class="final-stats">
+      <div>🎊 Niềm vui Tết: <b>${state.joy}</b></div>
+      <div>🤝 Gắn kết: <b>${state.bond}</b></div>
+    </div>
+
+    <div class="momo-conclusion">
+      ${financeMessage}
+    </div>
+
+    <div class="final-reflection">
+      ${reflection}
+    </div>
+  `;
 
   goToSlide(17);
 }
+
 
 /* =========================
    MONEY RAIN EFFECT
