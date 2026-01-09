@@ -206,17 +206,17 @@ function endGame() {
   /* ====== KẾT LUẬN HÀNH VI ====== */
   if (state.joy < 2) {
     reflection +=
-      "• Bạn đã dành hơi ít thời gian cho bản thân, hãy yêu chiều bản thân một chút nhé 💖<br>";
+      "Bạn đã dành hơi ít thời gian cho bản thân, hãy yêu chiều bản thân một chút nhé 💖<br>";
   }
 
   if (state.bond < 2) {
     reflection +=
-      "• Bạn đã dành hơi ít thời gian cho các mối quan hệ, đừng quên tận hưởng niềm vui từ sự đồng hành và gắn kết với những người xung quanh nhé 🤝<br>";
+      "Bạn đã dành hơi ít thời gian cho các mối quan hệ, đừng quên tận hưởng niềm vui từ sự đồng hành và gắn kết với những người xung quanh nhé 🤝<br>";
   }
 
   if (reflection === "") {
     reflection =
-      "• Bạn đã cân bằng khá tốt giữa bản thân và các mối quan hệ trong dịp Tết này 🌸";
+      "Bạn đã cân bằng khá tốt giữa bản thân và các mối quan hệ trong dịp Tết này 🌸";
   }
 
   /* ====== RENDER HTML ====== */
@@ -260,4 +260,36 @@ function moneyRain(count = 18) {
 
     setTimeout(() => money.remove(), 4000);
   }
+}
+
+
+/* =========================
+   SAKURA EFFECT
+========================= */
+function startSakura(count = 12) {
+  for (let i = 0; i < count; i++) {
+    createSakura();
+  }
+}
+
+function createSakura() {
+  const sakura = document.createElement("div");
+  sakura.className = "sakura";
+  sakura.innerText = "🌸";
+
+  sakura.style.left = Math.random() * window.innerWidth + "px";
+  sakura.style.fontSize = 16 + Math.random() * 18 + "px";
+
+  const fallDuration = 10 + Math.random() * 10; // rơi chậm
+  const swingDuration = 3 + Math.random() * 4;
+
+  sakura.style.animationDuration =
+    `${fallDuration}s, ${swingDuration}s`;
+
+  document.body.appendChild(sakura);
+
+  setTimeout(() => {
+    sakura.remove();
+    createSakura(); // tạo lại để rơi liên tục
+  }, fallDuration * 1000);
 }

@@ -181,16 +181,22 @@ body {
 /* =========================
    BACKGROUND NGÀY
 ========================= */
+.bg-lan {
+    background-image: url("./assest/lan.jpg");
+}
+.bg-quy {
+    background-image: url("./assest/quy.png");
+}
 .bg-day1 {
-    background-image: url("https://images.unsplash.com/photo-1544025162-d76694265947");
+    background-image: url("./assest/29.jpg");
 }
 
 .bg-day2 {
-    background-image: url("https://images.unsplash.com/photo-1519741497674-611481863552");
+    background-image: url("./assest/29.jpg");
 }
 
 .bg-day3 {
-    background-image: url("https://images.unsplash.com/photo-1518609878373-06d740f60d8b");
+    background-image: url("./assest/29.jpg");
 }
 
 .bg-tet-market1 {
@@ -331,4 +337,46 @@ body {
     font-size: 22px;
     line-height: 1.6;
     color: #ffffff;
+}
+
+
+/* =========================
+   SAKURA / HOA ĐÀO FALLING
+========================= */
+
+.sakura {
+    position: fixed;
+    top: -40px;
+    pointer-events: none;
+    z-index: 5;
+    /* dưới box, trên background */
+    animation-name: sakuraFall, sakuraSwing;
+    animation-timing-function: linear, ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes sakuraFall {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(110vh);
+        opacity: 0.85;
+    }
+}
+
+@keyframes sakuraSwing {
+    0% {
+        margin-left: 0;
+    }
+
+    50% {
+        margin-left: 30px;
+    }
+
+    100% {
+        margin-left: 0;
+    }
 }

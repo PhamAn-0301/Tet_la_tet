@@ -13,12 +13,15 @@
     <!-- CSS -->
     <link rel="stylesheet" href="./style.css">
 </head>
+<script>
+    startSakura(14);
+</script>
 
 <body>
     <div id="game">
 
         <!-- ================= INTRO ================= -->
-        <section class="slide active scene bg-day1" data-slide="0">
+        <section class="slide active scene bg-lan" data-slide="0">
             <div class="scene-content plain center">
                 <h1>3 ngày cận Tết</h1>
                 <p>Bạn có <b>Bạn có 5.000.000đ và 3 ngày cận Tết để lo đủ thứ chuyện quen thuộc:
@@ -30,7 +33,7 @@
             </div>
         </section>
 
-        <section class="slide scene bg-day1" data-slide="1">
+        <section class="slide scene bg-lan" data-slide="1">
             <div class="scene-content plain center">
                 <p>
                     Mục tiêu của bạn là đến cuối game còn ít nhất
@@ -43,7 +46,7 @@
             </div>
         </section>
 
-        <section class="slide scene bg-day1" data-slide="2">
+        <section class="slide scene bg-quy" data-slide="2">
             <div class="scene-content plain center">
                 <h1>Tạo quỹ “Tết sum vầy”</h1>
                 <p>Gợi ý nhỏ: Việc chuẩn bị trước một khoản tiền cho mục tiêu lớn có thể giúp bạn chi tiêu không lố ngân sách.
@@ -55,7 +58,7 @@
         </section>
 
         <!-- ================= DAY 1 ================= -->
-        <section class="slide day-intro bg-day1" data-slide="3">
+        <section class="slide scene bg-day1" data-slide="3">
             <div class="scene-content plain">
                 <h1>Ngày 27 Tết</h1>
                 <p>Mình cần chuẩn bị kỹ lưỡng để có 1 mùa Tết thật trọn vẹn</p>
@@ -100,7 +103,7 @@
         </section>
 
         <!-- ================= DAY 2 ================= -->
-        <section class="slide day-intro bg-day2" data-slide="8">
+        <section class="slide scene bg-day2" data-slide="8">
             <div class="scene-content plain">
                 <h1> Tết sắp đến rồi </h1>
                 <p>28 tết rồi, cần chuẩn bị gì nữa k nhỉ 🤔</p>
@@ -116,7 +119,7 @@
                 <button class="ghost" onclick="choose('khongCat')">Không cắt</button>
             </div>
         </section>
-        
+
         <section class="slide scene bg-tet-market1" data-slide="10">
             <div class="scene-content">
                 <h1>Mua quà Tết</h1>
@@ -135,7 +138,7 @@
         </section>
 
         <!-- ================= DAY 3 ================= -->
-        <section class="slide day-intro bg-day3" data-slide="12">
+        <section class="slide scene bg-day3" data-slide="12">
             <div class="scene-content plain">
                 <h1>Đã 29 tết rồi sao, nhanh thật đấy 🤩</h1>
                 <p>Hôm nay sẽ là 1 ngày bận rộn .</p>
@@ -193,6 +196,10 @@
     </div>
 
     <script src="./game.js"></script>
+    <script>
+        startSakura(20);
+    </script>
+
 </body>
 
 </html>
