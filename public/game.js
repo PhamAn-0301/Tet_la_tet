@@ -218,6 +218,7 @@ function endGame() {
     reflection =
       "Bạn đã cân bằng khá tốt giữa bản thân và các mối quan hệ trong dịp Tết này 🌸";
   }
+  
 
   /* ====== RENDER HTML ====== */
   document.getElementById("finalText").innerHTML = `

@@ -181,6 +181,11 @@ body {
 /* =========================
    BACKGROUND NGÀY
 ========================= */
+
+
+.bg-start {
+    background-image: url("./assest/start.jpg");
+}
 .bg-lan {
     background-image: url("./assest/lan.jpg");
 }
@@ -220,6 +225,9 @@ body {
 }
 .bg-toc {
     background-image: url("./assest/toc.jpg");
+}
+.bg-final {
+    background-image: url("./assest/final.jpg");
 }
 /* =========================
    EFFECTS
@@ -379,4 +387,75 @@ body {
     100% {
         margin-left: 0;
     }
+}
+
+/* =========================
+   LANDING START BUTTON
+========================= */
+.landing-start {
+    position: relative;
+    top: 140px;
+}
+/* =========================
+   LANDING PAGE – NO OVERLAY
+/* =========================
+   LANDING PAGE – NO OVERLAY
+========================= */
+.bg-start::before {
+    display: none;
+}
+.result-wrapper {
+    max-width: 720px;
+    text-align: center;
+}
+.result-title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 18px;
+    color: #fff;
+}
+.final-balance {
+    font-size: 56px;
+    font-weight: 800;
+    margin: 12px 0 20px;
+    color: #ffffff;
+}
+.final-stats {
+    font-size: 18px;
+    margin-bottom: 22px;
+    line-height: 1.5;
+    color: #f1f1f1;
+}
+.momo-conclusion {
+    background: linear-gradient(135deg, #ff6f91, #ff9db5);
+    color: #fff;
+
+    padding: 16px 28px;
+    border-radius: 18px;
+
+    font-size: 18px;
+    font-weight: 700;
+
+    box-shadow: 0 8px 0 #d85a78;
+    margin: 0 auto 18px;
+
+    width: fit-content;
+    max-width: 90%;
+    white-space: normal;
+    /* cho mobile */
+    text-align: center;
+}
+.final-reflection {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 28px;
+    color: #f5f5f5;
+}
+.result-next-btn {
+    width: 220px;
+    margin: 0 auto;
+    padding: 14px 0;
+
+    font-size: 18px;
+    border-radius: 16px;
 }

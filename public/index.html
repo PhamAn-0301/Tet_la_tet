@@ -19,17 +19,30 @@
 
 <body>
     <div id="game">
+<!-- ================= LANDING PAGE ================= -->
+<section class="slide active scene bg-start" data-slide="-1">
+    <div class="scene-content plain center">
+       
+
+   <button class="landing-start primary" onclick="goToSlide(0)">
+     Bắt đầu chơi
+</button>
+
+
+    </div>
+</section>
 
         <!-- ================= INTRO ================= -->
+
         <section class="slide active scene bg-lan" data-slide="0">
             <div class="scene-content plain center">
                 <h1>3 ngày cận Tết</h1>
-                <p>Bạn có <b>Bạn có 5.000.000đ và 3 ngày cận Tết để lo đủ thứ chuyện quen thuộc:
+                <p>Bạn có <b>5.000.000đ và 3 ngày cận Tết để lo đủ thứ chuyện quen thuộc:
                 từ mua sắm, gặp gỡ bạn bè, cho đến những khoản phát sinh bất ngờ.
                 </p>
                
 
-                <button class="primary" onclick="goToSlide(1)">Bắt đầu</button>
+                <button class="primary" onclick="goToSlide(1)">Tiếp tục</button>
             </div>
         </section>
 
@@ -40,7 +53,8 @@
                     <b>1.250.000đ</b> để mua vé xe về quê
                     và có thêm tiền lì xì Tết.
                 </p>
-                <p>Hãy chi tiêu hợp lý nhưng cũng đừng quên chăm sóc bản thân nhé!”
+                <p>Hãy chi tiêu hợp lý nhưng cũng đừng quên chăm sóc bản thân nhé, bạn sẽ được cộng thêm điểm khi lắng nghe bản thân và
+                vung đắp các mối quan hệ xung quanh đó!
                 </p>
                 <button class="primary" onclick="goToSlide(2)">Tiếp tục</button>
             </div>
@@ -53,7 +67,7 @@
 </p>
                 <button class="primary" onclick="createFund(1250000)">💰 Quỹ 1.250.000đ</button>
                 <button class="secondary" onclick="createFund(2000000)">💰 Quỹ 2.000.000đ</button>
-                <button class="ghost" onclick="playDayIntro(3,4)">Không tạo quỹ</button>
+                <button class="secondary" onclick="playDayIntro(3,4)">Không tạo quỹ</button>
             </div>
         </section>
 
@@ -96,7 +110,7 @@
 
         <section class="slide scene bg-check" data-slide="7">
             <div class="scene-content plain">
-                <h1>Đã hết 1 ngày,Bạn có muốn xem lại chi tiêu của mình ngày hôm nay không?</h1>
+                <h1>Đã hết 1 ngày, Bạn có muốn xem lại chi tiêu của mình ngày hôm nay không?</h1>
                 <button class="primary" onclick="showSummary(8)">Xem chi tiêu</button>
                 <button class="primary" onclick="playDayIntro(8,9)">Sang ngày 2</button>
             </div>
@@ -141,7 +155,7 @@
         <section class="slide scene bg-day3" data-slide="12">
             <div class="scene-content plain">
                 <h1>Đã 29 tết rồi sao, nhanh thật đấy 🤩</h1>
-                <p>Hôm nay sẽ là 1 ngày bận rộn .</p>
+                <p>Hôm nay sẽ là 1 ngày bận rộn.</p>
                 <button class="primary" onclick="goToDay3()">Tiếp tục</button>
             </div>
         </section>
@@ -150,7 +164,7 @@
             <div class="scene-content">
                 <h1>🚨 TÌNH HUỐNG BẤT NGỜ!</h1>
                 <p>Ôi không! Xe bạn hỏng giữa đường 😱</p>
-                <p><b>Chỉ còn 1 tiệm sửa xe mở cửa, cận Tết nên giá gấp 3 ngày thường.” (-600.000đ)
+                <p><b>Chỉ còn 1 tiệm sửa xe mở cửa, cận Tết nên giá gấp 3 ngày thường. (-600.000đ)
 </b></p>
                 <button class="primary" onclick="handleUnexpected1()">Sửa xe & tiếp tục</button>
             </div>
@@ -180,20 +194,30 @@
             </div>
         </section>
 
-        <section class="slide scene bg-xexe" data-slide="17">
-            <div class="scene-content plain">
-                <h1>Sau 3 ngày cận Tết, bạn còn lại:</h1>
-                <p id="finalText"></p>
-            </div>
-        </section>
+    <section class="slide scene bg-xexe" data-slide="17">
+        <div class="scene-content plain result-wrapper">
+            <h1 class="result-title">Sau 3 ngày cận Tết, bạn còn lại</h1>
+    
+            <div id="finalText"></div>
+    
+            <button class="result-next-btn primary" onclick="goToSlide(19)">
+                Tiếp tục
+            </button>
+        </div>
+    </section>
 
         <section class="slide scene bg-xexe" data-slide="18">
             <div class="scene-content plain">
                 <h1>Game Over</h1>
             </div>
         </section>
-
-    </div>
+        <section class="slide scene bg-final" data-slide="19">
+            <div class="scene-content plain">
+                <h1>Chúc mừng bạn! Bạn đã có một mùa Tết trọn vẹn theo cách của riêng mình 🎉
+                Đừng quên theo dõi livestream để xem ai là người chi tiêu sáng suốt nhất nhé!
+</h1>
+            </div>
+        </section>
 
     <script src="./game.js"></script>
     <script>
