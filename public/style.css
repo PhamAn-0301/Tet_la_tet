@@ -452,10 +452,26 @@ body {
     color: #f5f5f5;
 }
 .result-next-btn {
-    width: 220px;
+    width: 100px;
     margin: 0 auto;
     padding: 14px 0;
 
     font-size: 18px;
     border-radius: 16px;
+}
+
+/* =========================
+   FINAL BOX – COMPACT
+========================= */
+.final-box {
+    max-width: 460px;
+    padding: 28px 32px;
+    border-radius: 24px;
+}
+
+.final-message {
+    font-size: 20px;
+    line-height: 1.6;
+    color: #8b1e1e;
+    margin: 0;
 }
